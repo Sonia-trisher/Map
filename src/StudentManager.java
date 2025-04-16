@@ -46,11 +46,17 @@ public class StudentManager {
                         }
         }
         public static void findStudentWithHighestId(Map<Integer, String> students){
+                if (students == null || students.isEmpty()) {
+                        throw new NullPointerException("Student map is null or empty.");
+                }
                 int maxId = Collections.max(students.keySet());
                 System.out.println("Highest ID student: ID = " + maxId + ", Name = " + students.get(maxId));
 
         }
         public static void findStudentWithLowestId(Map<Integer, String> students){
+                if (students == null || students.isEmpty()) {
+                        throw new NullPointerException("Student map is null or empty.");
+                }
                 int minId = Collections.min(students.keySet());
                 System.out.println("Lowest ID student: ID = " + minId + ", Name = " + students.get(minId));
 
